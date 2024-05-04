@@ -50,6 +50,10 @@ body {
     align-items: center;
 
 }
+.menubar{
+    display: none;
+}
+
 .mylearning{
     position: relative;
     cursor: pointer;
@@ -73,10 +77,17 @@ body {
 .cat {
     display: flex;
     justify-content: space-around;
-    margin: 10px;
+    margin: px;
     border-bottom: solid black 1px;
     padding: 10px;
 
+}
+.cat p:hover{
+  color:  #A435F0;
+  background-color: transparent;
+  border: solid  #A435F0 1px;
+  transition-duration: 1s;
+  cursor: pointer;
 }
 
 .cat p {
@@ -87,14 +98,17 @@ body {
     padding-bottom: 10px;
     border-radius: 20px;
     color: white;
+    border: solid  #A435F0 1px; 
+    transition-duration: 1s;
 
 }
 
-.recommended_contanier {
+.recommended_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: ;
+   
+    
 
 }
 
@@ -113,6 +127,9 @@ body {
     position: relative;
 }
 
+   
+
+
 .sale-offer{
     border: solid black 2px;
     width: 30%;
@@ -121,32 +138,58 @@ body {
     left: 10%;
     background-color: white;
     padding: 30px;
+    animation-name: zoom;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards ;
+} 
+@keyframes zoom{
+    0%{
+        transform:scale(0);
+        opacity: 0;
+}
+100%{
+    transform: scale(1);
+    opacity: 1;
+}
+
 
 }
 
-.contanier_card {
-    width: 300px;
-    height: 50%;
-    padding: 10px;
+.contanier_card{
+    
+margin: 10px;
 
 
+
+flex-basis: 20%;
+flex-grow: 1;
+
+
+    
 }
+.contanier_card img{
+
+ 
+ height: 50%;
+ width: 100%;
+ 
+}
+
+    
 
 .recommended-title p {
     padding-bottom: 20px;
 }
 
-
-.contanier_card img {
-    width: 100%;
-}
 .topic{
     padding: 10px;
 }
 .topic_container{
     display: flex;
     margin-top: 10px;
-    gap: 10px;flex-wrap: wrap;
+    gap: 10px;
+    flex-wrap: wrap;
     
 
 }
@@ -188,3 +231,34 @@ body {
 .footer_one-s1 p,.footer_one-s2 p{
     padding:10px;
 }
+
+/* Media Queries*/
+
+@media screen and (max-width:800px){
+    body{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:600px){
+   .container_card{
+        flex-basis:40%;
+        
+    }
+}
+@media screen and (max-width:800px){
+    .main_bars{
+        display: none;
+    }
+ }
+ @media screen and (max-width:800px){
+     .menubar{ display: block;
+
+     }
+
+    }
+    @media screen and (max-width:600px){
+      .contanier_card{
+        flex-basis: 40%;
+      } 
+    }
